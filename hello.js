@@ -1,0 +1,12 @@
+import express from "express";
+import wiki from "./wiki.js";
+const app = express();
+const port = 3000;
+app.use("/wiki", wiki)
+app.get("/", function (req, res) {
+  res.send("Hello World!");
+});
+
+app.listen(port, function () {
+  console.log(`Example app listening on port ${port}!`);
+});
